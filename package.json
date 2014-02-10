@@ -1,0 +1,20 @@
+{
+  "name": "gcode-visualizer",
+  "version": "0.0.0",
+  "description": "",
+  "main": "visualizer.js",
+  "dependencies": {
+    "bunny": "~1.0.1",
+    "gcode-lines": "~0.0.1",
+    "mesh-viewer": "~0.0.0",
+    "interpret-gcode": "~0.0.1",
+    "brfs": "0.0.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserify": { "transform": [ "brfs" ] },
+  "author": "",
+  "license": "ISC"
+}
