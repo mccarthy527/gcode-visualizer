@@ -6,21 +6,37 @@ var fs = require("fs")
 var data = fs.readFileSync("test.gcode")
 var fileContent = data.toString()
 var states = gc(fileContent)
-var roads = sl(states)
+var paths = sl(states)
 var mesh
 
 shell.on("viewer-init", function() 
 {
 	shell.gl.lineWidth(5)
 	
-	testMesh = segments2mesh(roads.lines)
+	console.log(paths)
+	classifyPaths(paths)
+	testMesh = segments2mesh(paths.lines)
 	
+
 	mesh = shell.createMesh(testMesh)
 })
 
 shell.on("gl-render", function() {
 	mesh.draw()
 })
+
+function classifyPaths(paths)
+{	
+	paths.width = []
+	paths.height =[]
+	for(var i = 0; i < paths.extruded.length; i++)
+	{
+		if(paths.lines[i] != undefined && paths.extruded[i] > 0)
+		{
+			//paths.lines[i];
+		}	
+	}
+}
 
 function segments2mesh(lines)	//note: removes 'undefined' entries so could mess up indexing!
 {
@@ -33,10 +49,6 @@ function segments2mesh(lines)	//note: removes 'undefined' entries so could mess 
 			pts = pts.concat(lines[i]);
 		}	
 	}
-	console.log("lines")
-	console.log(lines)
-	console.log("pts")
-	console.log(pts)
 	
 	
 	var allMoves = []
@@ -51,4 +63,3 @@ function segments2mesh(lines)	//note: removes 'undefined' entries so could mess 
 		pointSize: 16
     }
 }
-

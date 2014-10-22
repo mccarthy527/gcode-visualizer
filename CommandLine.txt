@@ -1,0 +1,3 @@
+cd C:\Users\Brian\Documents\GitHub\gcode-visualizer
+
+beefy visualizer.js
