@@ -1,5 +1,5 @@
 //var shell = require("mesh-viewer")()
-var gc = require('interpret-gcode')
+var gc = require('gcode-parser')
 var sl = require("gcode-lines")
 var fs = require("fs")
 
