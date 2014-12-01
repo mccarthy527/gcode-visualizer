@@ -1,3 +1,10 @@
+TO GET BEEFY:
+
+npm install -g beefy browserify
+
+WHEN YOU ARE BEEFY:
+
+
 cd C:\Users\Brian\Documents\GitHub\gcode-visualizer
 
 beefy visualizer.js
