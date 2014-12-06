@@ -17,7 +17,6 @@ shell.on("viewer-init", function()
 	classifyPaths(paths)
 	testMesh = segments2mesh(paths.lines)
 	
-
 	mesh = shell.createMesh(testMesh)
 })
 
